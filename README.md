@@ -1,4 +1,4 @@
 # kubernetes-microservices
 
 
-* [mini-kube](minikube.md)
+* [mini-kube](/doc/minikube.md)
