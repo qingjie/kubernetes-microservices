@@ -2,4 +2,4 @@
 
 
 * [mini-kube setup](/doc/readme.md)
-* [pod-service after set label](/doc1/readme.md)
+* [add label in pod and service](/doc1/readme.md)
