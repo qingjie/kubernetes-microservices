@@ -8,3 +8,4 @@
 * [How to use ReplicaSet](/doc4/readme.md)
 * [How to use Deployment](/doc5/readme.md)
 * [install mysql](/doc6/readme.md)
+* [working demo(frontend-gateway-queue)](/doc7/readme.md)
