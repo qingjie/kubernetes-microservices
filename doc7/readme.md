@@ -52,9 +52,9 @@ replicaset.apps/webapp-5c5dcc8d66              1         1         0       50s
 
 
 
-** frontend: http://192.168.99.106:30080/
-** queue: http://192.168.99.106:30010/admin/queues.jsp
-** gateway: http://192.168.99.106:30020/
+## frontend: http://192.168.99.106:30080/
+## queue: http://192.168.99.106:30010/admin/queues.jsp
+## gateway: http://192.168.99.106:30020/
 
 
 ![](img/frontend.png)
