@@ -338,3 +338,7 @@ Events:
   Normal  Started    18s   kubelet, minikube  Started container mongodb
 
 ```
+---
+![](img/d-1.png)
+![](img/d-2.png)
+![](img/d-2.1.png)
