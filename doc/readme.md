@@ -31,3 +31,7 @@ http://192.168.99.101:8080
 localhost:k8s-test zhao$ docker container stop 0726
 localhost:k8s-test zhao$ docker container rm 0726
 ```
+
+```
+minikube start --memory=4096
+```
