@@ -9,4 +9,4 @@
 * [How to use Deployment](/doc5/readme.md)
 * [install mysql](/doc6/readme.md)
 * [working micro-service demo(position-simulator/position-tracker/api-gateway/queue/webapp)](/doc7/readme.md)
-* [add mongodb storage for Volume (PersistentVolumeClaims, StorageClasses and Binding)] (/doc8/readme.md)
+* [add mongodb storage for Volume (PersistentVolumeClaims, StorageClasses and Binding)](/doc8/readme.md)
