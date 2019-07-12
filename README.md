@@ -13,7 +13,7 @@
 ---
 * [KOPS Create | Update | Delete on AWS](/doc9/readme.md)
 * [ELK/EFK](/doc10/readme.md)
-* [Cluster Monitoring with Prometheus and Grafana](/doc11/readme.md)
+* [Cluster Monitoring with Prometheus and Grafana | Helm](/doc11/readme.md)
 * [Alert Manager](/doc12/readme.md)
 * [Kubernetes Requests and Limits](/doc13/readme.md)
 * [Metrics Profilling in Kubernetes](/doc14/readme.md)
