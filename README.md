@@ -1,10 +1,10 @@
 # kubernetes-microservices
 
 
-* [mini-kube setup](/doc/readme.md)
-* [add label in pod and service](/doc1/readme.md)
-* [change release version from 0 to 0-5 with label](/doc2/readme.md)
-* [install Active MQ](/doc3/readme.md)
+* [Mini-kube setup](/doc/readme.md)
+* [Label in pod and service](/doc1/readme.md)
+* [Change release version from 0 to 0-5 with label](/doc2/readme.md)
+* [Install Active MQ](/doc3/readme.md)
 * [ReplicaSet](/doc4/readme.md)
 * [Deployment](/doc5/readme.md)
 * [Networking and Service Discovery | Namespaces | Install mysql](/doc6/readme.md)
