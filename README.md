@@ -20,7 +20,7 @@
 * [Rediness and Liveness Probes](/doc16/readme.md)
 * [Quality of Service and Eviction](/doc17/readme.md)
 * [RBAC on Kubernetes](/doc18/readme.md)
-* [ConfigMaps and Secrets](/doc19/readme.md)
+* [ConfigMap and Secret](/doc19/readme.md)
 * [Ingress Controller](/doc20/readme.md)
 * [Batch Jobs | Cron Jobs | DaemonSets | Scaling out a mongoDB](/doc21/readme.md)
 * [CI-CD | Jenkins | Pipeline](/doc22/readme.md)
