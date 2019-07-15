@@ -563,5 +563,4 @@ Events:
   ----     ------            ----                 ----               -------
   Warning  FailedScheduling  48s (x4 over 3m18s)  default-scheduler  0/1 nodes are available: 1 Insufficient cpu.
 ```
-![](img/ELK:EFK.png)
 ![](img/mem.png)
