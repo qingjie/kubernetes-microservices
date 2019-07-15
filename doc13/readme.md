@@ -1,6 +1,8 @@
 ### memory limit: if over limit, container will be killed
 ### cpu limit: if over limit, will not allow
 
+![](img/mem.png)
+
 ```
 localhost:dev zhao$ cd doc13/
 localhost:doc13 zhao$ ls
@@ -563,4 +565,4 @@ Events:
   ----     ------            ----                 ----               -------
   Warning  FailedScheduling  48s (x4 over 3m18s)  default-scheduler  0/1 nodes are available: 1 Insufficient cpu.
 ```
-![](img/mem.png)
+
