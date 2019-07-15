@@ -1,5 +1,5 @@
-memory limit: if over limit, container will be killed
-cpu limit: if over limit, will not allow
+### memory limit: if over limit, container will be killed
+### cpu limit: if over limit, will not allow
 
 ```
 localhost:dev zhao$ cd doc13/
