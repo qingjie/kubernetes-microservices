@@ -2,7 +2,7 @@ after you change image
 from richardchesterwood/k8s-fleetman-api-gateway:release2
 to richardchesterwood/k8s-fleetman-api-gateway:performance
 ```
-localhost:doc14 zhao$ kubectl apply -f workloads.yaml
+localhost:doc15 zhao$ kubectl apply -f workloads.yaml
 kubectl get all
 
 ```
@@ -13,7 +13,7 @@ http://192.168.99.106:30080/api/panic
 
 make sure metrics-server is enabled
 ```
-localhost:doc14 zhao$ minikube addons list
+localhost:doc15 zhao$ minikube addons list
 - addon-manager: enabled
 - dashboard: enabled
 - default-storageclass: enabled
@@ -33,7 +33,7 @@ localhost:doc14 zhao$ minikube addons list
 ```
 
 ```
-localhost:doc14 zhao$ kubectl top pod
+localhost:doc15 zhao$ kubectl top pod
 NAME                                 CPU(cores)   MEMORY(bytes)
 api-gateway-9d5546845-t8t69          3m           162Mi
 mongodb-5dc79669d-r5g2c              4m           221Mi
@@ -41,18 +41,18 @@ position-simulator-96f46d659-dxzzp   10m          507Mi
 position-tracker-f6f5dd79d-b8q77     5m           515Mi
 queue-5798db7fdb-b89tc               16m          214Mi
 webapp-7bf85bf85f-lf8x8              0m           4Mi
-localhost:doc14 zhao$ kubectl top node
+localhost:doc15 zhao$ kubectl top node
 NAME       CPU(cores)   CPU%   MEMORY(bytes)   MEMORY%
 minikube   135m         6%     2777Mi          72%
 ```
 
 ```
-localhost:doc14 zhao$ kubectl autoscale deployment api-gateway --cpu-percent 400 --min 1 --max 4
+localhost:doc15 zhao$ kubectl autoscale deployment api-gateway --cpu-percent 400 --min 1 --max 4
 horizontalpodautoscaler.autoscaling/api-gateway autoscaled
-localhost:doc14 zhao$ kubectl get hpa
+localhost:doc15 zhao$ kubectl get hpa
 NAME          REFERENCE                TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
 api-gateway   Deployment/api-gateway   4%/400%   1         4         1          29s
-localhost:doc14 zhao$ kubectl top pod
+localhost:doc15 zhao$ kubectl top pod
 NAME                                 CPU(cores)   MEMORY(bytes)
 api-gateway-57579fc57b-52vn8         3m           162Mi
 mongodb-5dc79669d-r5g2c              5m           223Mi
@@ -63,7 +63,7 @@ webapp-7bf85bf85f-lf8x8              0m           4Mi
 ```
 
 ```
-localhost:doc14 zhao$ kubectl describe hpa api-gateway
+localhost:doc15 zhao$ kubectl describe hpa api-gateway
 Name:                                                  api-gateway
 Namespace:                                             default
 Labels:                                                <none>
@@ -82,10 +82,10 @@ Conditions:
   ScalingActive   True    ValidMetricFound    the HPA was able to successfully calculate a replica count from cpu resource utilization (percentage of request)
   ScalingLimited  False   DesiredWithinRange  the desired count is within the acceptable range
 Events:           <none>
-localhost:doc14 zhao$ kubectl get hpa api-gateway
+localhost:doc15 zhao$ kubectl get hpa api-gateway
 NAME          REFERENCE                TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
 api-gateway   Deployment/api-gateway   6%/400%   1         4         1          7m27s
-localhost:doc14 zhao$ kubectl get hpa api-gateway -o yaml
+localhost:doc15 zhao$ kubectl get hpa api-gateway -o yaml
 apiVersion: autoscaling/v1
 kind: HorizontalPodAutoscaler
 metadata:
@@ -119,18 +119,18 @@ status:
 autoscale-rules.yaml is from above file
 
 ```
-localhost:doc14 zhao$ kubectl delete hpa api-gateway
+localhost:doc15 zhao$ kubectl delete hpa api-gateway
 horizontalpodautoscaler.autoscaling "api-gateway" deleted
-localhost:doc14 zhao$ kubectl get hpa
+localhost:doc15 zhao$ kubectl get hpa
 No resources found.
-localhost:doc14 zhao$ kubectl apply -f autoscale-rules.yaml
+localhost:doc15 zhao$ kubectl apply -f autoscale-rules.yaml
 horizontalpodautoscaler.autoscaling/api-gateway created
-localhost:doc14 zhao$ kubectl get hpa
+localhost:doc15 zhao$ kubectl get hpa
 NAME          REFERENCE                TARGETS          MINPODS   MAXPODS   REPLICAS   AGE
 api-gateway   Deployment/api-gateway   <unknown>/400%   1         4         0          9s
 ```
 ```
-localhost:doc14 zhao$ kubectl top pod
+localhost:doc15 zhao$ kubectl top pod
 NAME                                 CPU(cores)   MEMORY(bytes)
 api-gateway-57579fc57b-52vn8         3m           163Mi
 mongodb-5dc79669d-r5g2c              6m           224Mi
@@ -144,7 +144,7 @@ refresh the link to make api-gateway's cpu up
 http://192.168.99.106:30080/api/panic
 
 ```
-localhost:doc14 zhao$ kubectl top pod
+localhost:doc15 zhao$ kubectl top pod
 NAME                                 CPU(cores)   MEMORY(bytes)
 api-gateway-57579fc57b-52vn8         355m         164Mi
 mongodb-5dc79669d-r5g2c              6m           225Mi
@@ -152,7 +152,7 @@ position-simulator-96f46d659-dxzzp   9m           424Mi
 position-tracker-f6f5dd79d-b8q77     3m           514Mi
 queue-5798db7fdb-b89tc               14m          228Mi
 webapp-7bf85bf85f-lf8x8              0m           4Mi
-localhost:doc14 zhao$ kubectl describe hpa api-gateway
+localhost:doc15 zhao$ kubectl describe hpa api-gateway
 Name:                                                  api-gateway
 Namespace:                                             default
 Labels:                                                <none>
@@ -178,7 +178,7 @@ Events:
 ```
 
 ```
-localhost:doc14 zhao$ kubectl top pod
+localhost:doc15 zhao$ kubectl top pod
 NAME                                 CPU(cores)   MEMORY(bytes)
 api-gateway-57579fc57b-52vn8         355m         164Mi
 mongodb-5dc79669d-r5g2c              6m           225Mi
@@ -186,7 +186,7 @@ position-simulator-96f46d659-dxzzp   9m           424Mi
 position-tracker-f6f5dd79d-b8q77     3m           514Mi
 queue-5798db7fdb-b89tc               14m          228Mi
 webapp-7bf85bf85f-lf8x8              0m           4Mi
-localhost:doc14 zhao$ kubectl top pod
+localhost:doc15 zhao$ kubectl top pod
 NAME                                 CPU(cores)   MEMORY(bytes)
 api-gateway-57579fc57b-52vn8         5m           166Mi
 mongodb-5dc79669d-r5g2c              9m           225Mi
@@ -196,7 +196,7 @@ queue-5798db7fdb-b89tc               17m          213Mi
 webapp-7bf85bf85f-lf8x8              0m           4Mi
 ```
 ```
-localhost:doc14 zhao$ kubectl describe hpa api-gateway
+localhost:doc15 zhao$ kubectl describe hpa api-gateway
 Name:                                                  api-gateway
 Namespace:                                             default
 Labels:                                                <none>
@@ -223,7 +223,7 @@ Events:
 
 two api-gateway
 ```
-localhost:doc14 zhao$ kubectl get pods
+localhost:doc15 zhao$ kubectl get pods
 NAME                                 READY   STATUS    RESTARTS   AGE
 api-gateway-57579fc57b-4hh6s         1/1     Running   0          3m38s
 api-gateway-57579fc57b-52vn8         1/1     Running   0          33m
@@ -232,7 +232,7 @@ position-simulator-96f46d659-dxzzp   1/1     Running   1          7d
 position-tracker-f6f5dd79d-b8q77     1/1     Running   1          7d
 queue-5798db7fdb-b89tc               1/1     Running   1          7d
 webapp-7bf85bf85f-lf8x8              1/1     Running   4          7d
-localhost:doc14 zhao$ kubectl get all
+localhost:doc15 zhao$ kubectl get all
 NAME                                     READY   STATUS    RESTARTS   AGE
 pod/api-gateway-57579fc57b-4hh6s         1/1     Running   0          2m3s
 pod/api-gateway-57579fc57b-52vn8         1/1     Running   0          32m
