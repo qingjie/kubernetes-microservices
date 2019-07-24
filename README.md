@@ -20,7 +20,7 @@
 * [Metrics Profilling in Kubernetes](/doc14/readme.md)
 * [Horizontal Pod Autoscaling](/doc15/readme.md)
 * [Rediness and Liveness Probes](/doc16/readme.md)
-* [Quality of Service and Eviction](/doc17/readme.md)
+* [Quality of Service and Eviction Pod Priority](/doc17/readme.md)
 * [RBAC on Kubernetes](/doc18/readme.md)
 * [ConfigMap and Secret](/doc19/readme.md)
 * [Ingress Controller](/doc20/readme.md)
