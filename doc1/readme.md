@@ -54,6 +54,7 @@ kubectl describe svc/fleetman-webapp
 kubectl get po --show-labels
 kubectl get po --show-labels -l release=0-5
 ```
+![](img/v.png)
 ![](img/v0.png)
 ![](img/v0-5.png)
 
