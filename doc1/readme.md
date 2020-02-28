@@ -41,6 +41,21 @@ http://192.168.99.102:30080
 
 
 
+----
+```
+k8s-course
+kubectl get po
+kubectl exec webapp ls
+kubectl -it exec webapp sh
+wget http://localhost:80
+
+
+kubectl describe svc/fleetman-webapp
+kubectl get po --show-labels
+kubectl get po --show-labels -l release=0-5
+```
+![](img/v0.png)
+![](img/v0-5.png)
 
 
 
