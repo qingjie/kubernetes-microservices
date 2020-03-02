@@ -26,3 +26,10 @@
 * [Ingress Controller](/doc20/readme.md)
 * [Batch Jobs | Cron Jobs | DaemonSets | StatefulSet | Scaling out a mongoDB](/doc21/readme.md)
 * [CI-CD | Jenkins | Pipeline](/doc22/readme.md)
+
+
+---
+* https://martinfowler.com/bliki/BoundedContext.html
+* https://microservices.io/patterns/apigateway.html
+
+
