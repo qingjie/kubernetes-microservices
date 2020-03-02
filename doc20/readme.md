@@ -231,5 +231,6 @@ check the following url that is from AWS
 https://www.youtube.com/watch?v=gEzCKNA-nCg&feature=youtu.be
 
 ---
+*** cross-ns-resources.yaml
 ![](img/human.png)
 ![](img/machine.png)
