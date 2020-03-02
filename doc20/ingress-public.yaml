@@ -3,7 +3,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: public-routing
+  name: basic-routing
 spec:
   rules:
     - host: fleetman.com
@@ -13,3 +13,10 @@ spec:
             backend:
               serviceName: fleetman-webapp
               servicePort: 80
+    - host: queue.fleetman.com
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: fleetman-queue
+              servicePort: 8161
