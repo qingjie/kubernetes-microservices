@@ -1,3 +1,7 @@
+---
+* https://kubernetes.github.io/ingress-nginx/deploy/#aws
+
+---
 http://192.168.99.106:30080
 http://192.168.99.106:30010
 
