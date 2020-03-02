@@ -229,3 +229,7 @@ check the following url that is from AWS
 
 # setting up HTTPS with TLS termination at the load balancer
 https://www.youtube.com/watch?v=gEzCKNA-nCg&feature=youtu.be
+
+---
+![](img/human.png)
+![](img/machine.png)
