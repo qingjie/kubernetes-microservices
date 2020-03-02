@@ -274,3 +274,14 @@ replicaset.apps/webapp-7bf85bf85f              1         1         1       7d
 NAME                                              REFERENCE                TARGETS   MINPODS   MAXPODS   REPLICAS   AGE
 horizontalpodautoscaler.autoscaling/api-gateway   Deployment/api-gateway   9%/400%   1         4         2          8m6s
 ```
+---
+send request with loop
+```
+while true; do curl 192.168.64.6:30080/api; echo; done
+```
+
+```
+kubectl get rs
+kubectl get po
+kubectl describe hpa api-gateway
+```
