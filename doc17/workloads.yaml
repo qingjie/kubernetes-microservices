@@ -17,11 +17,11 @@ spec:
         image: richardchesterwood/k8s-fleetman-queue:resources
         resources:
           requests:
-            memory: 300Mi # 1Mi = 1024Ki 1Ki = 1024bytes # 1M = 1000K 1K = 1000bytes
-            cpu: 100m
+            memory: 300Mi
+            cpu: 200m
           limits:
             memory: 300Mi
-            cpu: 100m
+            cpu: 200m
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -39,7 +39,14 @@ spec:
     spec:
       containers:
       - name: position-simulator
-        image: richardchesterwood/k8s-fleetman-position-simulator:release2
+        image: richardchesterwood/k8s-fleetman-position-simulator:release1
+        resources:
+          requests:
+            memory: 500Mi
+            cpu: 100m
+          limits:
+            memory: 500Mi
+            cpu: 100m
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
@@ -61,7 +68,14 @@ spec:
     spec:
       containers:
       - name: position-tracker
-        image: richardchesterwood/k8s-fleetman-position-tracker:release3
+        image: richardchesterwood/k8s-fleetman-position-tracker:release1
+        resources:
+          requests:
+            memory: 500Mi
+            cpu: 100m
+          limits:
+            memory: 500Mi
+            cpu: 100m
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
@@ -74,7 +88,7 @@ spec:
   selector:
     matchLabels:
       app: api-gateway
-  replicas: 3
+  replicas: 1
   template: # template for the pods
     metadata:
       labels:
@@ -83,17 +97,21 @@ spec:
       containers:
       - name: api-gateway
         image: richardchesterwood/k8s-fleetman-api-gateway:performance
-        readinessProbe:
-          httpGet:
-            path: /
-            port: 8080
-        env:
-        - name: SPRING_PROFILES_ACTIVE
-          value: production-microservice
         resources:
           requests:
             memory: 200Mi
-            cpu: 50m
+            cpu: 100m
+          limits:
+            memory: 200Mi
+            cpu: 100m
+#        readinessProbe:
+#          httpGet:
+#            path: /
+#            port: 8080
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: production-microservice
+
 
 ---
 apiVersion: apps/v1
@@ -112,7 +130,14 @@ spec:
     spec:
       containers:
       - name: webapp
-        image: richardchesterwood/k8s-fleetman-webapp-angular:release2
+        image: richardchesterwood/k8s-fleetman-webapp-angular:release1
+        resources:
+          requests:
+            memory: 50Mi
+            cpu: 50m
+          limits:
+            memory: 50Mi
+            cpu: 50m
         env:
         - name: SPRING_PROFILES_ACTIVE
           value: production-microservice
