@@ -122,3 +122,5 @@ Pod priorities
 ![](img/7.png)
 ![](img/8.png)
 ![](img/9.png)
+---
+kubectl describe node minikube
