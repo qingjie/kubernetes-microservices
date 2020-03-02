@@ -233,7 +233,7 @@ https://www.youtube.com/watch?v=gEzCKNA-nCg&feature=youtu.be
 ---
 
 # one ingress, support 2 application in different namespace
-# cross-ns-resources.yaml
+### cross-ns-resources.yaml
 
 ![](img/human.png)
 ![](img/machine.png)
