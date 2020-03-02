@@ -157,3 +157,50 @@ replicaset.apps/webapp-66fbdb9599   1         1         0       1m
 replicaset.apps/webapp-746ff4c965   0         0         0       27m
 
 ```
+---
+```
+qzhaos-mbp:Chapter 10 Networking qzhao$ kubectl get all -n kube-system
+NAME                                   READY   STATUS    RESTARTS   AGE
+pod/coredns-6955765f44-bsshq           1/1     Running   1          7d
+pod/coredns-6955765f44-cz8d5           1/1     Running   1          7d
+pod/etcd-minikube                      1/1     Running   1          7d
+pod/kube-apiserver-minikube            1/1     Running   1          7d
+pod/kube-controller-manager-minikube   1/1     Running   1          7d
+pod/kube-proxy-djt6p                   1/1     Running   1          7d
+pod/kube-scheduler-minikube            1/1     Running   1          7d
+pod/storage-provisioner                1/1     Running   1          7d
+
+NAME               TYPE        CLUSTER-IP   EXTERNAL-IP   PORT(S)                  AGE
+service/kube-dns   ClusterIP   10.96.0.10   <none>        53/UDP,53/TCP,9153/TCP   7d
+
+NAME                        DESIRED   CURRENT   READY   UP-TO-DATE   AVAILABLE   NODE SELECTOR                 AGE
+daemonset.apps/kube-proxy   1         1         1       1            1           beta.kubernetes.io/os=linux   7d
+
+NAME                      READY   UP-TO-DATE   AVAILABLE   AGE
+deployment.apps/coredns   2/2     2            2           7d
+
+NAME                                 DESIRED   CURRENT   READY   AGE
+replicaset.apps/coredns-6955765f44   2         2         2       7d
+qzhaos-mbp:Chapter 10 Networking qzhao$ kubectl describe service/kube-dns -n kube-system
+Name:              kube-dns
+Namespace:         kube-system
+Labels:            k8s-app=kube-dns
+                   kubernetes.io/cluster-service=true
+                   kubernetes.io/name=KubeDNS
+Annotations:       prometheus.io/port: 9153
+                   prometheus.io/scrape: true
+Selector:          k8s-app=kube-dns
+Type:              ClusterIP
+IP:                10.96.0.10
+Port:              dns  53/UDP
+TargetPort:        53/UDP
+Endpoints:         172.17.0.2:53,172.17.0.3:53
+Port:              dns-tcp  53/TCP
+TargetPort:        53/TCP
+Endpoints:         172.17.0.2:53,172.17.0.3:53
+Port:              metrics  9153/TCP
+TargetPort:        9153/TCP
+Endpoints:         172.17.0.2:9153,172.17.0.3:9153
+Session Affinity:  None
+Events:            <none>
+```
