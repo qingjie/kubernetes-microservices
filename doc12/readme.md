@@ -32,3 +32,13 @@ kubectl create secret -n monitoring generic alertmanager-kube-prometheus --from-
 
 
 ```
+---
+![](img/alertmanager-1.png)
+![](img/alertmanager-2.png)
+![](img/alertmanager-3.png)
+![](img/alertmanager-4-enter-see-alert-manager.png)
+![](img/alertmanager-5.png)
+![](img/alertmanager-6.png)
+![](img/alertmanager-7.png)
+![](img/alertmanager-8-add-alertmanager-into-secret.png)
+
