@@ -129,3 +129,12 @@ ClusterRoles and ClusterRoleBindings
 ![](img/41.png)
 - kind: Service
 ![](img/42.png)
+
+---
+![](img/rbac-0.png)
+![](img/rbac-1.png)
+![](img/rbac-2.png)
+![](img/rbac-3.png)
+![](img/rbac-4.png)
+![](img/rbac-5.png)
+![](img/rbac-6.png)
