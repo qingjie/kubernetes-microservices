@@ -143,6 +143,13 @@ Events:
   Normal  SuccessfulCreate  2m57s  job-controller  Created pod: test-job-29zsg
 localhost:doc21 zhao$
 ```
+![](img/test-batch-job-0.png)
+![](img/test-batch-job-1.png)
+![](img/test-batch-job-2.png)
+![](img/kill-docker-test-batch-job.png)
+![](img/test-batch-job-final-script.png)
+![](img/test-batch-job-final-screent-1.png)
+![](img/test-batch-job-final-screent-2.png)
 ---
 # CronJobs
 https://crontab.guru/
