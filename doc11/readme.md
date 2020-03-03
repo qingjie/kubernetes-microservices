@@ -17,3 +17,4 @@ kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"templat
 # prometheus-operator
 edit ClusterIP to LoadBalancer
 
+![](edit-prometheus-operator-to-broswer.png)
