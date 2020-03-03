@@ -24,3 +24,7 @@ volumeClaimTemplates:
 
 ![](img/ELK:EFK.png)
 
+---
+![](img/efk-1.png)
+![](img/efk-3-storage-1.png)
+![](img/efk-3-storage-1.png)
