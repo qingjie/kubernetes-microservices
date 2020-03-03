@@ -203,6 +203,9 @@ localhost:doc21 zhao$
 localhost:doc21 zhao$ kubectl delete cronjob cron-job
 cronjob.batch "cron-job" deleted
 ```
+![](img/cronjob-1.png)
+![](img/cronjob-2.png)
+![](img/cronjob-3.png)
 ---
 # DaemonSets
 ![](img/3.png)
