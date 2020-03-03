@@ -8,8 +8,12 @@ kubectl create clusterrolebinding tiller-cluster-rule --clusterrole=cluster-admi
 
 kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"template":{"spec":{"serviceAccount":"tiller"}}}}' 
 
+```
 
 ```
+helm install --name monitoring --namespace monitoring stable/prometheus-operator
+```
+
 ![](install-mysql-with-helm-1.png)
 ![](install-mysql-with-helm-2.png)
 
