@@ -285,3 +285,5 @@ kubectl delete rs --all
 kubectl delete svc --all
 kubectl delete deployments --all
 ```
+---
+![](img/statefulset.png)
