@@ -287,3 +287,16 @@ kubectl delete deployments --all
 ```
 ---
 ![](img/statefulset.png)
+![](img/sgtatefulset-2.png)
+![](img/sgtatefulset-mongodb-1.png)
+![](img/sgtatefulset-mongodb-2.png)
+![](img/sgtatefulset-mongodb-3.png)
+![](img/sgtatefulset-mongodb-4.png)
+![](img/sgtatefulset-mongodb-5.png)
+![](img/sgtatefulset-mongodb-6.png)
+![](img/Headless-Service-in-StatefulSet.png)
+![](img/stateful-mongo-1.png)
+![](img/stateful-mongo-2.png)
+![](img/stateful-mongo-3.png)
+![](img/stateful-mongo-4.png)
+![](img/stateful-mongo-5-change-yml-to-connect-mongo-cluster.png)
