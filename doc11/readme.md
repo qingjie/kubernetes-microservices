@@ -12,3 +12,8 @@ kubectl patch deploy --namespace kube-system tiller-deploy -p '{"spec":{"templat
 ```
 ![](install-mysql-with-helm-1.png)
 ![](install-mysql-with-helm-2.png)
+
+---
+# prometheus-operator
+edit ClusterIP to LoadBalancer
+
