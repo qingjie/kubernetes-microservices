@@ -192,3 +192,4 @@ qzhaos-mbp: qzhao$ kubectl get pv
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM               STORAGECLASS   REASON   AGE
 pvc-a56d6a46-5e65-11ea-88e4-0e4148703fd5   7Gi        RWO            Retain           Bound    default/mongo-pvc   cloud-ssd               88s
 ```
+![](1.png)
