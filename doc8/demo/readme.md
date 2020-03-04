@@ -160,9 +160,9 @@ mongo-pvc   Bound    pvc-1164a9fa-5e64-11ea-853d-160a68a82d21   7Gi        RWO  
 qzhaos-mbp: qzhao$ kubectl get pv
 NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM               STORAGECLASS   REASON   AGE
 pvc-1164a9fa-5e64-11ea-853d-160a68a82d21   7Gi        RWO            Delete           Bound    default/mongo-pvc   cloud-ssd               7m3s
-
+```
 If you want to keep storage, pls make sure you have reclaimPolicy: Retain like the following
-
+```
 # What do want?
 apiVersion: v1
 kind: PersistentVolumeClaim
