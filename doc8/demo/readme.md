@@ -1,77 +1,8 @@
 PersistentVolumeClaim & PersistentVolume
 
 pls do not forget set RECLAIM POLICY, you can choose one that you need, like  Delete, Retain
-```
-qzhaos-mbp:test qzhao$ cat storage.yaml
-# What do want?
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: mongo-pvc
-spec:
-  storageClassName: mylocalstorage
-  accessModes:
-    - ReadWriteOnce
-  resources:
-    requests:
-      storage: 20Gi
----
-# How do we want it implemented
-apiVersion: v1
-kind: PersistentVolume
-metadata:
-  name: local-storage
-spec:
-  storageClassName: mylocalstorage
-  capacity:
-    storage: 20Gi
-  accessModes:
-    - ReadWriteOnce
-  hostPath:
-    path: "/mnt/some new/directory/structure/"
-    type: DirectoryOrCreate   
-```
-```
-qzhaos-mbp:test qzhao$ cat mongo-stack.yaml
-apiVersion: apps/v1
-kind: Deployment
-metadata:
-  name: mongodb
-spec:
-  selector:
-    matchLabels:
-      app: mongodb
-  replicas: 1
-  template: # template for the pods
-    metadata:
-      labels:
-        app: mongodb
-    spec:
-      containers:
-      - name: mongodb
-        image: mongo:3.6.5-jessie
-        volumeMounts:
-          - name: mongo-persistent-storage
-            mountPath: /data/db
-      volumes:
-        - name: mongo-persistent-storage
-          # pointer to the configuration of HOW we want the mount to be implemented
-          persistentVolumeClaim:
-            claimName: mongo-pvc
----
-kind: Service
-apiVersion: v1
-metadata:
-  name: fleetman-mongodb
-spec:
-  selector:
-    app: mongodb
-  ports:
-    - name: mongoport
-      port: 27017
-  type: ClusterIP
-```
-How to set PVC on with AWS
+
+# How to set PVC on with AWS
 
 https://kubernetes.io/docs/concepts/storage/storage-classes/
 
@@ -158,7 +89,7 @@ deployment.apps/mongodb   1/1     1            1           2m4s
 
 NAME                                 DESIRED   CURRENT   READY   AGE
 replicaset.apps/mongodb-57f6bf75cc   1         1         1       2m4s
-qzhaos-mbp:Chapter 12 Persistence qzhao$
+
 
 qzhaos-mbp: qzhao$ kubectl describe pod/mongodb-57f6bf75cc-jmvq5
 Name:           mongodb-57f6bf75cc-jmvq5
@@ -217,7 +148,7 @@ Events:
   Normal   Pulled                  104s                   kubelet, ip-192-168-22-76.ec2.internal  Container image "mongo:3.6.5-jessie" already present on machine
   Normal   Created                 104s                   kubelet, ip-192-168-22-76.ec2.internal  Created container mongodb
   Normal   Started                 104s                   kubelet, ip-192-168-22-76.ec2.internal  Started container mongodb
-qzhaos-mbp:Chapter 12 Persistence qzhao$
+qzhaos-mbp: qzhao$
 ```
 you will find volumn pvc-1164a9fa-5e64-11ea-853d-160a68a82d21` like the following:
 ```
