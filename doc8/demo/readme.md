@@ -208,3 +208,5 @@ pvc-b448b664-5ef2-11ea-88e4-0e4148703fd5   7Gi        RWO            Retain     
 ```
 ![](patch-pv-pvc1.png)
 ![](patch-pv-pvc2.png)
+
+* https://github.com/kubernetes/kubernetes/issues/69697
