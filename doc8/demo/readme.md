@@ -193,3 +193,18 @@ NAME                                       CAPACITY   ACCESS MODES   RECLAIM POL
 pvc-a56d6a46-5e65-11ea-88e4-0e4148703fd5   7Gi        RWO            Retain           Bound    default/mongo-pvc   cloud-ssd               88s
 ```
 ![](1.png)
+
+patch pv/pvc
+```
+qzhaos-mbp:f1 qzhao$ kubectl get pv
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS        CLAIM                                                       STORAGECLASS      REASON   AGE
+pvc-b448b664-5ef2-11ea-88e4-0e4148703fd5   7Gi        RWO            Retain           Bound         default/mongo-pvc                                           mongo-cloud-ssd            14m
+pvc-cff08ef8-5ef0-11ea-853d-160a68a82d21   31Gi       RWO            Retain           Terminating   kube-system/elasticsearch-logging-elasticsearch-logging-1   cloud-ssd                  28m
+qzhaos-mbp:f1 qzhao$ kubectl patch pv pvc-cff08ef8-5ef0-11ea-853d-160a68a82d21  -p '{"metadata":{"finalizers":null}}'
+persistentvolume/pvc-cff08ef8-5ef0-11ea-853d-160a68a82d21 patched
+qzhaos-mbp:f1 qzhao$ kubectl get pv
+NAME                                       CAPACITY   ACCESS MODES   RECLAIM POLICY   STATUS   CLAIM               STORAGECLASS      REASON   AGE
+pvc-b448b664-5ef2-11ea-88e4-0e4148703fd5   7Gi        RWO            Retain           Bound    default/mongo-pvc   mongo-cloud-ssd            15m
+```
+![](patch-pv-pvc1.png)
+![](patch-pv-pvc2.png)
