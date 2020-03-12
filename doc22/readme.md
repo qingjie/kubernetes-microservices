@@ -195,3 +195,6 @@ localhost:src zhao$ git push
 How to create a new organization, and then ask Joenkins to scan all micro-services in the organization
 ![](img/16.png)
 * https://github.com/new-cherry-inc
+
+
+![](dind-version.png)
